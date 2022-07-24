@@ -1,0 +1,6 @@
+[book]
+authors = ["cagricatik"]
+language = "ge"
+multilingual = false
+src = "src"
+title = "Elektrik-Elektronik Architektur"

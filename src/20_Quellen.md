@@ -1,0 +1,10 @@
+# [Quellen]()
+
+- [Elektrik/Elektronik-Architekturen im Kraftfahrzeug](https://link.springer.com/book/10.1007/978-3-642-25478-9)
+- [Datenkommunikation im Automobil: Grundlagen, Bussysteme, Protokolle und Anwendungen](https://www.abebooks.com/Datenkommunikation-Automobil-Grundlagen-Bussysteme-Protokolle-Anwendungen/12232139962/bd)
+- [Automobil Elektronik](https://www.automobil-elektronik.de/blog/2022/)
+- [Vector E-Learning](https://elearning.vector.com/)
+- [Data Descriptions](https://automotive.softing.com/standards/data-descriptions.html)
+- [CANoe - Product Information](https://cdn.vector.com/cms/content/products/canape/Docs/CANape_ProductInformation_EN.pdf)
+- [CANape - Product Information](https://cdn.vector.com/cms/content/products/canape/Docs/CANape_ProductInformation_EN.pdf)
+- [Testmanagement und Softwaretest](https://link.springer.com/book/10.1007/978-3-658-09964-0)

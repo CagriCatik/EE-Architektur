@@ -1,0 +1,593 @@
+<!DOCTYPE HTML>
+<html lang="ge" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Elektrik-Elektronik Architektur</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="00_EE-Architektur.html"><strong aria-hidden="true">1.</strong> Elektrik-Elektronik Architektur</a></li><li class="chapter-item expanded "><a href="01_Einfuehrung.html"><strong aria-hidden="true">2.</strong> Einführung</a></li><li class="chapter-item expanded "><a href="02_Bussysteme.html"><strong aria-hidden="true">3.</strong> Bussysteme</a></li><li class="chapter-item expanded "><a href="03_Rechnerstrukturen.html"><strong aria-hidden="true">4.</strong> Rechnerstrukturen</a></li><li class="chapter-item expanded "><a href="04_Echtzeitsysteme.html"><strong aria-hidden="true">5.</strong> Echtzeitsysteme</a></li><li class="chapter-item expanded "><a href="05_Softwarearchitektur.html"><strong aria-hidden="true">6.</strong> Softwarearchitektur</a></li><li class="chapter-item expanded "><a href="06_Autosar_Classic.html"><strong aria-hidden="true">7.</strong> Autosar Classic</a></li><li class="chapter-item expanded "><a href="07_Autosar_Adaptiv.html"><strong aria-hidden="true">8.</strong> Autosar Adaptiv</a></li><li class="chapter-item expanded "><a href="08_Vernetzte_und_verteilte_Funktionen.html"><strong aria-hidden="true">9.</strong> Vernetzte und Verteile Funktionen</a></li><li class="chapter-item expanded "><a href="09_Netzwerkmanagement.html"><strong aria-hidden="true">10.</strong> Netzwerkmanagement</a></li><li class="chapter-item expanded "><a href="10_Diagnose.html"><strong aria-hidden="true">11.</strong> Diagnose</a></li><li class="chapter-item expanded "><a href="11_Datenbasen.html"><strong aria-hidden="true">12.</strong> Datenbasen</a></li><li class="chapter-item expanded "><a href="12_Softwarequalitaet.html"><strong aria-hidden="true">13.</strong> Softwarequalität</a></li><li class="chapter-item expanded "><a href="13_Reifegrad.html"><strong aria-hidden="true">14.</strong> Reifegrad</a></li><li class="chapter-item expanded "><a href="14_FuSi.html"><strong aria-hidden="true">15.</strong> Funktionale Sicherheit</a></li><li class="chapter-item expanded "><a href="15_Tools.html"><strong aria-hidden="true">16.</strong> Tools</a></li><li class="chapter-item expanded "><a href="20_Quellen.html"><strong aria-hidden="true">17.</strong> Quellen</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Elektrik-Elektronik Architektur</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="elektrik-elektronik-architektur"><a class="header" href="#elektrik-elektronik-architektur">Elektrik-Elektronik Architektur</a></h1>
+<ul>
+<li><a href="./00_Einfuehrung.html">Elektrik-Elektronik Architektur</a></li>
+<li><a href="./01_Einfuehrung.html">Einführung</a></li>
+<li><a href="./02_Bussysteme.html">Bussysteme</a></li>
+<li><a href="./03_Rechnerstrukturen.html">Rechnerstrukturen</a></li>
+<li><a href="./04_Echtzeitsysteme.html">Echtzeitsysteme</a></li>
+<li><a href="./05_Softwarearchitektur.html">Softwarearchitektur</a></li>
+<li><a href="./06_Autosar_Classic.html">Autosar Classic</a></li>
+<li><a href="./07_Autosar_Adaptiv.html">Autosar Adaptiv</a></li>
+<li><a href="./08_Vernetzte_und_verteilte_Funktionen.html">Vernetzte und Verteile Funktionen</a></li>
+<li><a href="./09_Netzwerkmanagement.html">Netzwerkmanagement</a></li>
+<li><a href="./10_Diagnose.html">Diagnose</a></li>
+<li><a href="./11_Datenbasen.html">Datenbasen</a></li>
+<li><a href="./12_Softwarequalitaet.html">Softwarequalität</a></li>
+<li><a href="./13_Reifegrad.html">Reifegrad</a></li>
+<li><a href="./14_FuSi.html">Funktionale Sicherheit</a></li>
+<li><a href="./15_Tools.html">Tools</a></li>
+<li><a href="./20_Tools.html">Quellen</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="einführung"><a class="header" href="#einführung">Einführung</a></h1>
+<ul>
+<li><a href="">Elektrik/Elektronik-Architektur im Fahrzeug</a></li>
+<li><a href="">Steigender Software-Anteil</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="protokolle-und-bussysteme"><a class="header" href="#protokolle-und-bussysteme"><a href="">Protokolle und Bussysteme</a></a></h1>
+<ul>
+<li><a href="">CAN</a></li>
+<li><a href="">LIN</a></li>
+<li><a href="">ETHERNET</a></li>
+<li><a href="">BroadR-Reach</a></li>
+<li><a href="">Flexray</a></li>
+<li><a href="">XCP</a></li>
+<li><a href="">BAP</a></li>
+<li><a href="">SOME/IP</a></li>
+</ul>
+<h2 id="can"><a class="header" href="#can"><a href="02_Bussysteme.html#can">CAN</a></a></h2>
+<h3 id="einführung-1"><a class="header" href="#einführung-1"><span style="color:red">Einführung</span></a></h3>
+<h2 id="lin"><a class="header" href="#lin"><a href="02_Bussysteme.html#">LIN</a></a></h2>
+<h3 id="einführung-2"><a class="header" href="#einführung-2"><span style="color:red">Einführung</span></a></h3>
+<h2 id="ethernet"><a class="header" href="#ethernet"><a href="02_Bussysteme.html#ethernet">ETHERNET</a></a></h2>
+<h3 id="einführung-3"><a class="header" href="#einführung-3"><span style="color:red">Einführung</span></a></h3>
+<h2 id="broadr-reach"><a class="header" href="#broadr-reach"><a href="02_Bussysteme.html#broadr-reach">BroadR-Reach</a></a></h2>
+<h3 id="einführung-4"><a class="header" href="#einführung-4"><span style="color:red">Einführung</span></a></h3>
+<h2 id="flexray"><a class="header" href="#flexray"><a href="02_Bussysteme.html#flexray">Flexray</a></a></h2>
+<h3 id="einführung-5"><a class="header" href="#einführung-5"><span style="color:red">Einführung</span></a></h3>
+<h2 id="xcp"><a class="header" href="#xcp"><a href="02_Bussysteme.html#xcp">XCP</a></a></h2>
+<h3 id="einführung-6"><a class="header" href="#einführung-6"><span style="color:red">Einführung</span></a></h3>
+<p>XCP (Universal Measurement and Calibration Protocol) ist eine Schnittstelle für den lesenden und schreibenden Zugriff auf den Speicher eines Steuergeräts. Der Zugriff auf Parameter und Messgrößen erfolgt adressorientiert. Die Eigenschaften und Speicheradressen dieser Daten werden im A2L-Dateiformat beschrieben. Die A2L-Datei enthält alle notwendigen Informationen, um den Speicherzugriff zu ermöglichen und die übertragenen Daten zu interpretieren. XCP ist als Master-Slave-Lösung konzipiert. Der Controller enthält einen Protokolltreiber, der auf Speicherzugriffsanfragen des Masters antwortet. Verschiedene Mess- und Kalibrierungsaufgaben können durch unterschiedliche Konfigurationen des XCP-Masters durchgeführt werden, ohne dass der Anwendungscode des Steuergeräts neu kompiliert werden muss. Die Methode funktioniert universell und ist nicht auf Embedded-Steuergeräte beschränkt. XCP kann zur Erfassung von Messdaten und zur Anpassung von Parametern aus einer beliebigen Softwareanwendung, wie z.B. einer Simulationsanwendung auf einem PC, verwendet werden.</p>
+<h2 id="bap"><a class="header" href="#bap"><a href="02_Bussysteme.html#bap">BAP</a></a></h2>
+<h3 id="einführung-7"><a class="header" href="#einführung-7"><span style="color:red">Einführung</span></a></h3>
+<p>Bedingt durch die vielen verschiedenen Funktionalitäten dieser Systeme ist eine Vereinheitlichung der Schnittstellen, Bedienung und Anzeigen erforderlich, die marken- und fahrzeugunabhängig ist. Um diesen Anforderungen gerecht zu werden, hat die Herstellerinitiative Software ( HIS) ein Übertragungsprotokoll für die Bedienung und Anzeige von Fahrerassistenzsystemen entwickelt: Das Bedien- und Anzeigeprotokoll ( BAP). Das Bap-Protokoll (Bedienung und Anzeige) ist ein vom Volkswagen-Konzern entwickeltes Transportprotokoll, das für den Austausch von Informationen zwischen verschiedenen Geräten im Fahrzeugnetz verwendet wird. Nach dem OSI-Modell verwendet BAP die Schichten 2 bis 7, Schicht 1 sind normalerweise Protokolle wie LIN, CAN oder Flexray. Ein Beispiel für die Verwendung von BAP ist der Wechsel der Radiosender in der Haupteinheit mit Hilfe der MFL-Tasten (Multifunktionslenkrad).</p>
+<p>Es gibt 2 Arten von Geräten, die für die BAP-Kommunikation relevant sind:</p>
+<ul>
+<li>ASG-Geräte (Anzeigesteuergeräte) - sind Geräte, die in der Regel Schnittstellen zum Benutzer sind und Daten von FSG-Geräten anzeigen können. Beispiel: Displays, HMI, Lautsprecher.</li>
+<li>FSG-Geräte (Funktionssteuergeräte) - sind Geräte, die spezielle Geräte steuern. Diese Art von Geräten hat keine HMI- oder Display-Möglichkeit.</li>
+</ul>
+<p>Die BAP-Kommunikation findet immer zwischen einem FSG und einem ASG statt. Eine Kommunikation zwischen FSG &lt;-&gt; FSG oder ASG &lt;-&gt;ASG ist nicht möglich. Weder die Kommunikation zwischen einem FSG und mehreren ASG, noch die Kommunikation zwischen vielen FSG und einem ASG. </p>
+<h3 id="protokollschicht"><a class="header" href="#protokollschicht"><span style="color:red">Protokollschicht</span></a></h3>
+<p>Das Bedien- und Anzeigeprotokoll ist nach dem OSI-Referenzmodell in Schichten aufgebaut und deckt die Schichten 2 bis 7 ab, also die Sicherungsschicht, Vermittlungsschicht, Transportschicht, Kommunikationssteuerungsschicht und Darstellungsschicht. Die unter der Sicherungsschicht liegende Bitübertragungsschicht mit den Übertragungsmedien wird durch den LIN-Bus oder CAN-Bus realisiert. Die Funktionen der Schichten 2 bis 4 übernimmt der BAP Communication Layer ( BCL). Der BAP Protocol Layer ( BPL) erfüllt die Funktionen der Kommunikationssteuerungsschicht und die BAP Application Layer ( BAL) die der Präsentationssteuerungsschicht und der Anwendungsschicht. Die Darstellungsschicht realisiert dabei die funktionsspezifische Anpassung an die Anwendung, die auf der Anwendungsschicht abläuft.</p>
+<p>Das Bedien- und Anzeigeprotokoll hat eine konsequente Trennung von Funktionen und Darstellungen, die über getrennte Funktionssteuergeräte und Anzeigesteuergeräte realisiert wird. Durch diese Trennung können beispielsweise die gleichen Kommunikationsgeräte in verschiedenen Fahrzeugen benutzt und die Anzeigen mit individueller Darstellung versehen werden. </p>
+<p>Der BAP-Protokollstapel besteht aus 3 Schichten:</p>
+<ul>
+<li>BAP-Anwendungsschicht (BAL)</li>
+<li>BAP-Protokollschicht (BPL)</li>
+<li>BAP Kommunikationsschicht (BCL)</li>
+</ul>
+<h2 id="someip"><a class="header" href="#someip"><a href="02_Bussysteme.html#someip">SOME/IP</a></a></h2>
+<h2 id="quellen"><a class="header" href="#quellen"><a href="02_Bussysteme.html#quellen">Quellen</a></a></h2>
+<ul>
+<li><a href="https://www.protokollix.de/automotive.html">Bedien und Anzeige Protokoll</a></li>
+<li><a href="https://www.itwissen.infoBedien-und-Anzeigeprotokoll-Automotive-BAP-operation-and-display-modul.html">Bedien- und Anzeigeprotokoll (Automotive) (BAP)</a></li>
+<li><a href="http://www4.cs.fau.de/%7Ewosch/Publications/2005/Elektronik2005.pdf">Konfigurationsprüfung für Standardsoftware mit Hilfe von Merkmalmodellen</a></li>
+<li><a href="https://www.vector.com/int/en/know-how/protocols/xcp-measurement-and-calibration-protocol/">XCP measurement and calibration protocol</a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rechnerstrukturen-im-fahrzeug"><a class="header" href="#rechnerstrukturen-im-fahrzeug"><a href="">Rechnerstrukturen im Fahrzeug</a></a></h1>
+<ul>
+<li><a href="">Struktur von Steuergeräten</a></li>
+<li><a href="">16-Bit-Architektur</a></li>
+<li><a href="">32-Bit-Architektur</a></li>
+<li><a href="">Hochleistungsrechner</a></li>
+</ul>
+<hr />
+<h2 id="struktur-von-steuergeräten"><a class="header" href="#struktur-von-steuergeräten"><a href="03_Rechnerstrukturen.html#can">Struktur von Steuergeräten</a></a></h2>
+<h3 id="einführung-8"><a class="header" href="#einführung-8"><span style="color:red">Einführung</span></a></h3>
+<h2 id="16-bit-architektur"><a class="header" href="#16-bit-architektur"><a href="03_Rechnerstrukturen.html#">16-Bit-Architektur</a></a></h2>
+<h3 id="einführung-9"><a class="header" href="#einführung-9"><span style="color:red">Einführung</span></a></h3>
+<h2 id="32-bit-architektur"><a class="header" href="#32-bit-architektur"><a href="03_Rechnerstrukturen.html#">32-Bit-Architektur</a></a></h2>
+<h3 id="einführung-10"><a class="header" href="#einführung-10"><span style="color:red">Einführung</span></a></h3>
+<h2 id="hochleistungsrechner"><a class="header" href="#hochleistungsrechner"><a href="03_Rechnerstrukturen.html#">Hochleistungsrechner</a></a></h2>
+<h3 id="einführung-11"><a class="header" href="#einführung-11"><span style="color:red">Einführung</span></a></h3>
+<h2 id="quellen-1"><a class="header" href="#quellen-1"><a href="03_Rechnerstrukturen.html#quellen">Quellen</a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rechnerstrukturen-im-fahrzeug-1"><a class="header" href="#rechnerstrukturen-im-fahrzeug-1"><a href="">Rechnerstrukturen im Fahrzeug</a></a></h1>
+<ul>
+<li><a href="">Struktur von Steuergeräten</a></li>
+<li><a href="">16-Bit-Architektur</a></li>
+<li><a href="">32-Bit-Architektur</a></li>
+<li><a href="">Hochleistungsrechner</a></li>
+<li><a href="">Echtzeitsysteme</a>
+<ul>
+<li><a href="">Definition und Schlussfolgerung</a></li>
+<li><a href="">Missverständnisse und Fehlannahmen</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<hr />
+<h2 id=""><a class="header" href="#"><a href="04_Echtzeitsysteme.html#"></a></a></h2>
+<h3 id="einführung-12"><a class="header" href="#einführung-12"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-1"><a class="header" href="#-1"><a href="04_Echtzeitsysteme.html#"></a></a></h2>
+<h3 id="einführung-13"><a class="header" href="#einführung-13"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-2"><a class="header" href="#-2"><a href="04_Echtzeitsysteme.html#"></a></a></h2>
+<h3 id="einführung-14"><a class="header" href="#einführung-14"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-3"><a class="header" href="#-3"><a href="04_Echtzeitsysteme.html#"></a></a></h2>
+<h3 id="einführung-15"><a class="header" href="#einführung-15"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-4"><a class="header" href="#-4"><a href="04_Echtzeitsysteme.html#quellen"></a></a></h2>
+<ul>
+<li><a href="https://www.informatik.htw-dresden.de/%7Erobge/ezs/vl/ezs-01-einfuehrung.pdf">Echtzeitsysteme</a></li>
+<li><a href="https://www2.htw-dresden.de/%7Erobge/ezs/ezs.html">Grundlagen echtzeitfähiger Systeme</a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-5"><a class="header" href="#-5"><a href=""> </a></a></h1>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<hr />
+<h2 id="-6"><a class="header" href="#-6"><a href="05_Softwarearchitektur.html#"></a></a></h2>
+<h3 id="einführung-16"><a class="header" href="#einführung-16"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-7"><a class="header" href="#-7"><a href="05_Softwarearchitektur.html#"></a></a></h2>
+<h3 id="einführung-17"><a class="header" href="#einführung-17"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-8"><a class="header" href="#-8"><a href="05_Softwarearchitektur.html#"></a></a></h2>
+<h3 id="einführung-18"><a class="header" href="#einführung-18"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-9"><a class="header" href="#-9"><a href="05_Softwarearchitektur.html#"></a></a></h2>
+<h3 id="einführung-19"><a class="header" href="#einführung-19"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-10"><a class="header" href="#-10"><a href="05_Softwarearchitektur.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-11"><a class="header" href="#-11"><a href=""> </a></a></h1>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<hr />
+<h2 id="-12"><a class="header" href="#-12"><a href="06_Autosar_Classic.html#"></a></a></h2>
+<h3 id="einführung-20"><a class="header" href="#einführung-20"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-13"><a class="header" href="#-13"><a href="06_Autosar_Classic.html#"></a></a></h2>
+<h3 id="einführung-21"><a class="header" href="#einführung-21"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-14"><a class="header" href="#-14"><a href="06_Autosar_Classic.html#"></a></a></h2>
+<h3 id="einführung-22"><a class="header" href="#einführung-22"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-15"><a class="header" href="#-15"><a href="06_Autosar_Classic.html#"></a></a></h2>
+<h3 id="einführung-23"><a class="header" href="#einführung-23"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-16"><a class="header" href="#-16"><a href="06_Autosar_Classic.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="autosar-adaptiv"><a class="header" href="#autosar-adaptiv"><a href="">AUTOSAR-Adaptiv</a></a></h1>
+<ul>
+<li><a href="">AUTOSAR Adaptive Applikationen</a></li>
+<li><a href="">Execution Management</a></li>
+<li><a href="">Service-orientierte Kommunikation</a></li>
+<li><a href="">Kommunikationsmanagement</a></li>
+</ul>
+<hr />
+<h2 id="-17"><a class="header" href="#-17"><a href="07_Autosar_Adaptiv.html#"></a></a></h2>
+<h3 id="einführung-24"><a class="header" href="#einführung-24"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-18"><a class="header" href="#-18"><a href="07_Autosar_Adaptiv.html#"></a></a></h2>
+<h3 id="einführung-25"><a class="header" href="#einführung-25"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-19"><a class="header" href="#-19"><a href="07_Autosar_Adaptiv.html#"></a></a></h2>
+<h3 id="einführung-26"><a class="header" href="#einführung-26"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-20"><a class="header" href="#-20"><a href="07_Autosar_Adaptiv.html#"></a></a></h2>
+<h3 id="einführung-27"><a class="header" href="#einführung-27"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-21"><a class="header" href="#-21"><a href="07_Autosar_Adaptiv.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vernetzte-und-verteilte-funktionen"><a class="header" href="#vernetzte-und-verteilte-funktionen"><a href="">Vernetzte und verteilte Funktionen</a></a></h1>
+<ul>
+<li><a href="">Vernetzte Funktionen</a></li>
+<li><a href="">Verteilte Funktionen</a></li>
+</ul>
+<hr />
+<h2 id="-22"><a class="header" href="#-22"><a href="08_Vernetzte_und_verteilte_Funktionen.html#"></a></a></h2>
+<h3 id="einführung-28"><a class="header" href="#einführung-28"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-23"><a class="header" href="#-23"><a href="08_Vernetzte_und_verteilte_Funktionen.html#"></a></a></h2>
+<h3 id="einführung-29"><a class="header" href="#einführung-29"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-24"><a class="header" href="#-24"><a href="08_Vernetzte_und_verteilte_Funktionen.html#"></a></a></h2>
+<h3 id="einführung-30"><a class="header" href="#einführung-30"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-25"><a class="header" href="#-25"><a href="08_Vernetzte_und_verteilte_Funktionen.html#"></a></a></h2>
+<h3 id="einführung-31"><a class="header" href="#einführung-31"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-26"><a class="header" href="#-26"><a href="08_Vernetzte_und_verteilte_Funktionen.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="netzwerkmanagement"><a class="header" href="#netzwerkmanagement"><a href="">Netzwerkmanagement</a></a></h1>
+<ul>
+<li><a href="">Dezentrales Netzwerkmanagement</a></li>
+<li><a href="">Zentrales Netzwerkmanagement</a></li>
+</ul>
+<hr />
+<h2 id="-27"><a class="header" href="#-27"><a href="09_Netzwerkmanagement.html#"></a></a></h2>
+<h3 id="einführung-32"><a class="header" href="#einführung-32"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-28"><a class="header" href="#-28"><a href="09_Netzwerkmanagement.html#"></a></a></h2>
+<h3 id="einführung-33"><a class="header" href="#einführung-33"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-29"><a class="header" href="#-29"><a href="09_Netzwerkmanagement.html#"></a></a></h2>
+<h3 id="einführung-34"><a class="header" href="#einführung-34"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-30"><a class="header" href="#-30"><a href="09_Netzwerkmanagement.html#"></a></a></h2>
+<h3 id="einführung-35"><a class="header" href="#einführung-35"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-31"><a class="header" href="#-31"><a href="09_Netzwerkmanagement.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><ul>
+<li><a href="">Diagnose</a>
+<ul>
+<li><a href="">UDS: Unified Diagnostic Services</a></li>
+<li><a href="">Fehlerbehandlung</a></li>
+<li><a href="">Fehlerdiagnose</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="-32"><a class="header" href="#-32"><a href="10_Diagnose.html#"></a></a></h2>
+<h3 id="einführung-36"><a class="header" href="#einführung-36"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-33"><a class="header" href="#-33"><a href="10_Diagnose.html#"></a></a></h2>
+<h3 id="einführung-37"><a class="header" href="#einführung-37"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-34"><a class="header" href="#-34"><a href="10_Diagnose.html#"></a></a></h2>
+<h3 id="einführung-38"><a class="header" href="#einführung-38"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-35"><a class="header" href="#-35"><a href="10_Diagnose.html#"></a></a></h2>
+<h3 id="einführung-39"><a class="header" href="#einführung-39"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-36"><a class="header" href="#-36"><a href="10_Diagnose.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><ul>
+<li><a href="">Datenbasen</a>
+<ul>
+<li><a href="">ODX: Open Diagnostic data eXchange</a></li>
+<li><a href="">OTX: Open Test sequence eXchange format</a></li>
+<li><a href="">A2L: ASAP2 description file</a></li>
+<li><a href="">DBC: CAN Database</a></li>
+<li><a href="">LDF: LIN Description File </a></li>
+<li><a href="">ARXML: AUTOSAR XML</a></li>
+</ul>
+</li>
+<li><a href="">Softwarequalität</a>
+<ul>
+<li><a href="">Definition</a></li>
+<li><a href="">ISTQB</a></li>
+</ul>
+</li>
+<li><a href="">Reifegrad-Standards / Qualitätsstandars</a>
+<ul>
+<li><a href="">CMMI</a></li>
+<li><a href="">Automotive SPICE</a></li>
+</ul>
+</li>
+<li><a href="">Funktionale Sicherheit</a>
+<ul>
+<li><a href="">Definition</a></li>
+<li><a href="">ISO 26262</a></li>
+</ul>
+</li>
+<li><a href="">Tools</a>
+<ul>
+<li><a href="">CANoe: CAN <strong>O</strong>pen <strong>E</strong>nvironment</a>
+<ul>
+<li><a href="">CAPL: <strong>C</strong>ommunication <strong>A</strong>ccess <strong>P</strong>rogramming <strong>L</strong>anguage.</a></li>
+</ul>
+</li>
+<li><a href="">CANape: CAN <strong>A</strong>pplication <strong>P</strong>rogramming <strong>E</strong>nvironment </a>
+<ul>
+<li><a href="">CASL: <strong>C</strong>alculation <strong>A</strong>nd <strong>S</strong>cripting <strong>L</strong>anguage</a></li>
+</ul>
+</li>
+<li><a href="">CANdelaStudio: </a></li>
+<li><a href="">EXAM: <strong>EX</strong>tended <strong>A</strong>utomation <strong>M</strong>ethod</a></li>
+<li><a href="">DaVinci</a></li>
+<li><a href="">PREEvision</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="-37"><a class="header" href="#-37"><a href="11_Datenbasen.html#"></a></a></h2>
+<h3 id="einführung-40"><a class="header" href="#einführung-40"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-38"><a class="header" href="#-38"><a href="11_Datenbasen.html#"></a></a></h2>
+<h3 id="einführung-41"><a class="header" href="#einführung-41"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-39"><a class="header" href="#-39"><a href="11_Datenbasen.html#"></a></a></h2>
+<h3 id="einführung-42"><a class="header" href="#einführung-42"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-40"><a class="header" href="#-40"><a href="11_Datenbasen.html#"></a></a></h2>
+<h3 id="einführung-43"><a class="header" href="#einführung-43"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-41"><a class="header" href="#-41"><a href="11_Datenbasen.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="softwarequalität"><a class="header" href="#softwarequalität">Softwarequalität</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-42"><a class="header" href="#-42"><a href=""> </a></a></h1>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<hr />
+<h2 id="-43"><a class="header" href="#-43"><a href="13_Reifegrad.html#"></a></a></h2>
+<h3 id="einführung-44"><a class="header" href="#einführung-44"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-44"><a class="header" href="#-44"><a href="13_Reifegrad.html#"></a></a></h2>
+<h3 id="einführung-45"><a class="header" href="#einführung-45"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-45"><a class="header" href="#-45"><a href="13_Reifegrad.html#"></a></a></h2>
+<h3 id="einführung-46"><a class="header" href="#einführung-46"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-46"><a class="header" href="#-46"><a href="13_Reifegrad.html#"></a></a></h2>
+<h3 id="einführung-47"><a class="header" href="#einführung-47"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-47"><a class="header" href="#-47"><a href="13_Reifegrad.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-48"><a class="header" href="#-48"><a href=""> </a></a></h1>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<hr />
+<h2 id="-49"><a class="header" href="#-49"><a href="14_FuSi.html#"></a></a></h2>
+<h3 id="einführung-48"><a class="header" href="#einführung-48"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-50"><a class="header" href="#-50"><a href="14_FuSi.html#"></a></a></h2>
+<h3 id="einführung-49"><a class="header" href="#einführung-49"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-51"><a class="header" href="#-51"><a href="14_FuSi.html#"></a></a></h2>
+<h3 id="einführung-50"><a class="header" href="#einführung-50"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-52"><a class="header" href="#-52"><a href="14_FuSi.html#"></a></a></h2>
+<h3 id="einführung-51"><a class="header" href="#einführung-51"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-53"><a class="header" href="#-53"><a href="14_FuSi.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-54"><a class="header" href="#-54"><a href=""> </a></a></h1>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<hr />
+<h2 id="-55"><a class="header" href="#-55"><a href="15_Tools.html#"></a></a></h2>
+<h3 id="einführung-52"><a class="header" href="#einführung-52"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-56"><a class="header" href="#-56"><a href="15_Tools.html#"></a></a></h2>
+<h3 id="einführung-53"><a class="header" href="#einführung-53"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-57"><a class="header" href="#-57"><a href="15_Tools.html#"></a></a></h2>
+<h3 id="einführung-54"><a class="header" href="#einführung-54"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-58"><a class="header" href="#-58"><a href="15_Tools.html#"></a></a></h2>
+<h3 id="einführung-55"><a class="header" href="#einführung-55"><span style="color:red">Einführung</span></a></h3>
+<h2 id="-59"><a class="header" href="#-59"><a href="15_Tools.html#quellen"></a></a></h2>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quellen-2"><a class="header" href="#quellen-2"><a href="">Quellen</a></a></h1>
+<ul>
+<li><a href="https://link.springer.com/book/10.1007/978-3-642-25478-9">Elektrik/Elektronik-Architekturen im Kraftfahrzeug</a></li>
+<li><a href="https://www.abebooks.com/Datenkommunikation-Automobil-Grundlagen-Bussysteme-Protokolle-Anwendungen/12232139962/bd">Datenkommunikation im Automobil: Grundlagen, Bussysteme, Protokolle und Anwendungen</a></li>
+<li><a href="https://www.automobil-elektronik.de/blog/2022/">Automobil Elektronik</a></li>
+<li><a href="https://elearning.vector.com/">Vector E-Learning</a></li>
+<li><a href="https://automotive.softing.com/standards/data-descriptions.html">Data Descriptions</a></li>
+<li><a href="https://cdn.vector.com/cms/content/products/canape/Docs/CANape_ProductInformation_EN.pdf">CANoe - Product Information</a></li>
+<li><a href="https://cdn.vector.com/cms/content/products/canape/Docs/CANape_ProductInformation_EN.pdf">CANape - Product Information</a></li>
+<li><a href="https://link.springer.com/book/10.1007/978-3-658-09964-0">Testmanagement und Softwaretest</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>

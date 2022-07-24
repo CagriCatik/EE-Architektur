@@ -8,6 +8,7 @@
     Elektrik/Elektronik-Architektur im Kraftfahrzeug
   </p>
 
+
   
 <!-- Badges -->
 <p>
@@ -32,95 +33,66 @@
 
 <br />
 
+
 <!-- Table of Contents -->
-#  Inhaltsverzeichnis
+- [Inhaltverzeichnis](#inhaltverzeichnis)
+  - [Klonen der Repository](#klonen-der-repository)
+  - [Installation `md-book`](#installation-md-book)
+  - [Lokales Kompilieren](#lokales-kompilieren)
+  - [Ausführen](#ausführen)
+  - [Inhalt](#inhalt)
+  - [Roadmap](#roadmap)
 
-- [Einführung](https://github.com/CagriCatik/EE-Architektur/tree/master/1_einf%C3%BChrung)
-  - [Elektrik/Elektronik-Architektur im Fahrzeug]()
-  - [Steigender Software-Anteil]()
-- [Protokolle und Bussysteme]()
-  - [CAN]()
-  - [LIN]()
-  - [ETHERNET]()
-  - [BroadR-Reach]()
-  - [Flexray]()
-  - [XCP]()
-  - [BAP]()
-  - [SOME/IP]()
-- [Rechnerstrukturen im Fahrzeug]() 
-  - [Struktur von Steuergeräten]()
-  - [16-Bit-Architektur]()
-  - [32-Bit-Architektur]()
-  - [Hochleistungsrechner]()
-- [Echtzeitsysteme]()
-  - [Definition und Schlussfolgerung]()
-  - [Missverständnisse und Fehlannahmen]()
-- [Softwarearchitektur]()
-  - [Definition]()
-  - [Gründe für Softwarearchitektur]()
-  - [Ziele von Softwarearchitektur]()
-- [AUTOSAR-Classic]()
-  - [Einführung AUTOSAR]()
-  - [AUTOSAR RTE]()
-  - [AUTOSAR BSW]()
-  - [AUTOSAR Methodik]()
-- [AUTOSAR-Adaptiv]()
-  - [AUTOSAR Adaptive Applikationen]()
-  - [Execution Management]()
-  - [Service-orientierte Kommunikation]()
-  - [Kommunikationsmanagement]()
-- [Vernetzte und verteilte Funktionen]()
-  - [Vernetzte Funktionen]()
-  - [Verteilte Funktionen]()
-- [Netzwerkmanagement]()
-  - [Dezentrales Netzwerkmanagement]()
-  - [Zentrales Netzwerkmanagement]()
-- [Diagnose]()
-  - [UDS]()
-  - [Fehlerbehandlung]()
-  - [Fehlerdiagnose]()
-- [Datenbasen]()
-  - [ODX: Open Diagnostic data eXchange]()
-  - [OTX: Open Test sequence eXchange format]()
-  - [A2L: ASAP2 description file]()
-  - [CANdb]()
-- [Reifegrad-Standards / Qualitätsstandars]()
-  - [CMMI]()
-  - [Automotive SPICE]()
-- [Funktionale Sicherheit]()
-  - [Definition]()
-  - [ISO 26262]()
-- [Softwarequalität]()
-  - [Definition]()
-  - [ISTQB]()
-- [Tools]()
-  - [CANoe]()
-  - [CANape]()
-  - [EXAM]()
-  - [DaVinci]()
-  - [PREEvision]()
+# Inhaltverzeichnis
+## Klonen der Repository
 
+```sh
+git clone https://github.com/CagriCatik/EE-Architektur
+```
 
-<!-- Roadmap -->
+## Installation [`md-book`](https://github.com/rust-lang/mdBook)
+
+```sh
+cd ~/EE-Architektur
+chmod +x install-mdbook.sh && ./install-mdbook.sh
+```
+
+## Lokales Kompilieren
+
+```sh
+export PATH=$PATH:$HOME/.cargo/bin
+mdbook build
+```
+
+## Ausführen
+
+```sh
+firefox book/index.html 
+```
+
+## Inhalt 
+
+- [Elektrik-Elektronik Architektur](./00_EE-Architektur.md)
+- [Einführung](./01_Einfuehrung.md)
+- [Bussysteme](./02_Bussysteme.md)
+- [Rechnerstrukturen](./03_Rechnerstrukturen.md)
+- [Echtzeitsysteme](./04_Echtzeitsysteme.md)
+- [Softwarearchitektur](./05_Softwarearchitektur.md)
+- [Autosar Classic](./06_Autosar_Classic.md)
+- [Autosar Adaptiv](./07_Autosar_Adaptiv.md)
+- [Vernetzte und Verteile Funktionen](./08_Vernetzte_und_verteilte_Funktionen.md)
+- [Netzwerkmanagement](./09_Netzwerkmanagement.md)
+- [Diagnose](./10_Diagnose.md)
+- [Datenbasen](./11_Datenbasen.md)
+- [Softwarequalität](./12_Softwarequalitaet.md)
+- [Reifegrad](./13_Reifegrad.md)
+- [Funktionale Sicherheit](./14_FuSi.md)
+- [Tools](./15_Tools.md)
+- [Quellen](./20_Quellen.md)
+
 ## Roadmap
 
-* [ ] Einführung
-* [ ] Bussysteme - BAP/BroadR-Reach
-* [ ] x
-* [ ] x
-* [ ] x
-* [ ] x
-* [ ] x
-* [ ] x
-* [ ] x
-* [ ] x
-* [ ] x
+- [ ] Bussysteme
+- [ ] Vernetzte und verteilte Funktionen
+  
 
-<!-- Acknowledgments -->
-## Quellen
-
-- [Elektrik/Elektronik-Architekturen im Kraftfahrzeug](https://link.springer.com/book/10.1007/978-3-642-25478-9)
-- [Datenkommunikation im Automobil: Grundlagen, Bussysteme, Protokolle und Anwendungen](https://www.abebooks.com/Datenkommunikation-Automobil-Grundlagen-Bussysteme-Protokolle-Anwendungen/12232139962/bd)
-- [Automobil Elektronik](https://www.automobil-elektronik.de/blog/2022/)
-- [Vector E-Learning](https://elearning.vector.com/)
-- [Data Descriptions](https://automotive.softing.com/standards/data-descriptions.html)
